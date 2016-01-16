@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+    </head>
+    <body>
+<!--
+
+        <%= @p1_img %>
+
+        <%= @p1_name %>
+
+        <%= @p2_img %>
+
+        <%= @p2_name %>
+
+        <a href="#" onClick="window.close(); return false;">閉じる</a>
+        
+-->
+        <ui class="ui centered grid">
+            <div class="row">
+                <div class="four wide colunm">
+                    <div class="ui fluid card">
+                        <div class="image">
+                            <%= image_tag 'fighter_1.png' %>
+                        </div>
+                        <div class="content">
+                            <a class="header center" target="_blank">さすらい男</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="two middle aligned column">
+                    <h1>VS</h1>
+                </div>
+                <div class="four wide colunm">
+                    <div class="ui fluid card">
+                        <div class="image">
+                            <%= image_tag 'fighter_2.png' %>
+                        </div>
+                        <div class="content">
+                            <span class="header center" target="_blank">さすらい女</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ui>
+        <ui class="ui centered grid">
+            <button class="red massive ui button">
+                この闘いが見たいぜ！
+            </button>
+        </ui>
+    </body>
+</html>
