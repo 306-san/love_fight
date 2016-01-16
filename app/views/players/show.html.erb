@@ -1,34 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @player.name %>
-</p>
-
-<p>
-  <strong>Prof pic:</strong>
-  <%= @player.prof_pic %>
-</p>
-
-<p>
-  <strong>Login:</strong>
-  <%= @player.login_id %>
-</p>
-
-<p>
-  <strong>Login pass:</strong>
-  <%= @player.login_pass %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @player.description %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @player.type_id %>
-</p>
-
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>
+<div class="ui container">
+    <div class="profile-upper">
+        <%= image_tag 'people.png', class: 'ui medium rounded floated left image' %>
+        <div><div class="big-size">名前</div></div>
+    <div class="true-name"><div class="name">保登心愛</div></div>
+    <div class="point">4000pt</div>
+    </div>
+    <div class="profile-lower">
+        <h1>コメント</h1>
+        <div class="ui segment">
+            基本的に笑顔で明るく、誰に対してもすぐに打ち解けられるフレンドリーな性格。ラビットハウスに下宿することになった当日から、ティッピーに「あっという間に店になじんでしまった」と評されていた。
+            その反面、かなりドジであり、色々と抜けている。ボケに回ることが多く、よくツッコミを入れられたりする（主にチノ、リゼ、シャロから）。ただ、接客業に向いている性格なためか、仕事に関してのドジはない模様（明記されていないだけかもしれないが）。 
+
+            前述通り、社交性はかなり高いため、全く知らない人にも気軽に話しかけることが出来る。二巻第六話の「お話をするお話」では、それが題材の一部となっており、後にサブキャラの一人となる青山さんと会話していたりした。
+
+            ちなみに、無類のもふもふ好きであり、特に兎をもふもふすることが大好きである。そのため、よくティッピーをもふもふしており、兎の群生を見て「もふもふ天国」と称したことも
+        </div>
+    </div>
+</div>
