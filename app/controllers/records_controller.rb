@@ -7,15 +7,31 @@ class RecordsController < ApplicationController
   # POST /records
   def create
     @record = Record.new(record_params)
-    respond_to do |format|
-      if @record.save
-        format.html { redirect_to @record, notice: 'record was successfully created.' }
-        format.json { render :show, status: :created, location: @record }
-      else
-        format.html { render :new }
-        format.json { render json: @record.errors, status: :unprocessable_entity }
-      end
+    delta_r = 16 + ((Player.find(@record.loser_id).rate) - Player.find(@record.winner_id).rate) * 0.04
+    if delta_r > 31 then
+      delta_r = 31
+    elsif delta_r < 1 then
+      delta_r = 1 
     end
+    Player.update(@record.loser_id, :rate => Player.find(@record.loser_id).rate - delta_r)
+    Player.update(@record.winner_id, :rate => Player.find(@record.winner_id).rate + delta_r)
+    @record.save
+    render :text => "hello world!"
   end
+
+  def show
+    render :text => "hello world!"  
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_record
+      @player = Player.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def record_params
+      params.require(:record).permit(:name, :winner_id, :loser_id, :fight_date)
+    end
 
 end
