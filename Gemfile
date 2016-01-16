@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'hirb'
 gem 'better_errors'
 gem 'pry-rails'
+gem 'devise'
+gem 'rails_admin'
 gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'byebug'
@@ -18,4 +20,5 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
+# use semantic-ui
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'

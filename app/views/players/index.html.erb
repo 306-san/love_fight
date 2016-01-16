@@ -2,36 +2,21 @@
 
 <h1>Listing Players</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Prof pic</th>
-      <th>Login</th>
-      <th>Login pass</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= player.prof_pic %></td>
-        <td><%= player.login_id %></td>
-        <td><%= player.login_pass %></td>
-        <td><%= player.description %></td>
-        <td><%= player.type_id %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<%= form_tag('./players/hope') do%>
+    <%for f in @players %>
+        <%= check_box_tag 'id[id][]', f.id %>
+        <%= f.name %>
+        <%= f.prof_pic %>
+        <%= f.login_id %>
+        <%= f.login_pass %>
+        <%= f.description %>
+        <%= f.type_id %>
+        <br>
     <% end %>
-  </tbody>
-</table>
+    <%= submit_tag "ファイル送信" %>
+<%end%>
 
-<br>
+
 
 <%= link_to 'New Player', new_player_path %>

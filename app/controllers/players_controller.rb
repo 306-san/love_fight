@@ -1,12 +1,10 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
-
   # GET /players
   # GET /players.json
   def index
     @players = Player.all
   end
-
   # GET /players/1
   # GET /players/1.json
   def show
@@ -16,15 +14,15 @@ class PlayersController < ApplicationController
   # GET /
   def hope
 
-    p1_id = params[:p1_id]
-    p2_id = params[:p2_id]
+    p1_id = params[:id]["id"][0]
+    p2_id = params[:id]["id"][1]
 
     p1_que = Player.find(p1_id)
-      @p1_name = p1_que.pluck(:name).first
-      @p1_img = p1_que.pluck(:prof_pic).first
+      @p1_name = p1_que.name
+      @p1_img = p1_que.prof_pic
     p2_que = Player.find( p2_id )
-      @p2_name = p2_que.pluck(:name).first
-      @p2_img = p2_que.pluck(:prof_pic).first
+      @p2_name = p2_que.name
+      @p2_img = p2_que.prof_pic
 
 
   end
@@ -33,13 +31,11 @@ class PlayersController < ApplicationController
   def new
     @player = Player.new
   end
-
   # GET /players/1/edit
   def edit
   end
 
   # POST /players
-  # POST /players.json
   def create
     @player = Player.new(player_params)
 
@@ -67,7 +63,6 @@ class PlayersController < ApplicationController
       end
     end
   end
-
   # DELETE /players/1
   # DELETE /players/1.json
   def destroy

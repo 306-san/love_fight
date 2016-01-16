@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :players
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :admin_users
+  resources :players do
+    collection do
+      post :hope
+    end
+  end
 
   get "players/hope" => "players#hope"
 
@@ -57,4 +63,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :records
 end
