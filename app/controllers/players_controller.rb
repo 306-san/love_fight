@@ -5,7 +5,6 @@ class PlayersController < ApplicationController
   def index
     @players = Player.all
   end
-
   # GET /players/1
   # GET /players/1.json
   def show
@@ -15,13 +14,11 @@ class PlayersController < ApplicationController
   def new
     @player = Player.new
   end
-
   # GET /players/1/edit
   def edit
   end
 
   # POST /players
-  # POST /players.json
   def create
     @player = Player.new(player_params)
 
