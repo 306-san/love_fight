@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'hirb'
 gem 'better_errors'
 gem 'pry-rails'
+gem 'devise'
+gem 'rails_admin'
 gem 'therubyracer', :platforms => :ruby
 gem 'libv8'
 gem 'execjs'
