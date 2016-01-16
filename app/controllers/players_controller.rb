@@ -1,6 +1,5 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: [:show, :edit, :update, :destroy]
-
   # GET /players
   # GET /players.json
   def index
@@ -50,7 +49,6 @@ class PlayersController < ApplicationController
       end
     end
   end
-
   # DELETE /players/1
   # DELETE /players/1.json
   def destroy
