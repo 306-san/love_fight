@@ -10,6 +10,23 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+
+  end
+
+  # GET /
+  def hope
+
+    p1_id = params[:p1_id]
+    p2_id = params[:p2_id]
+
+    p1_que = Player.find(p1_id)
+      @p1_name = p1_que.pluck(:name).first
+      @p1_img = p1_que.pluck(:prof_pic).first
+    p2_que = Player.find( p2_id )
+      @p2_name = p2_que.pluck(:name).first
+      @p2_img = p2_que.pluck(:prof_pic).first
+
+
   end
 
   # GET /players/new
