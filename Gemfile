@@ -11,6 +11,9 @@ gem 'hirb'
 gem 'better_errors'
 gem 'pry-rails'
 gem 'devise'
+gem 'therubyracer', :platforms => :ruby
+gem 'libv8'
+gem 'execjs'
 gem 'rails_admin'
 gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
