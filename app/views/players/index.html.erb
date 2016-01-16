@@ -1,35 +1,143 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Players</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Prof pic</th>
-      <th>Login</th>
-      <th>Login pass</th>
-      <th>Description</th>
-      <th>Type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= player.prof_pic %></td>
-        <td><%= player.login_id %></td>
-        <td><%= player.login_pass %></td>
-        <td><%= player.description %></td>
-        <td><%= player.type_id %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New Player', new_player_path %>
+<div class="ui top attached tabular menu">
+    <a class="red item active" data-tab="first">ボクシング</a>
+    <a class="red item" data-tab="second">キック</a>
+    <a class="item" data-tab="third">カポエラ</a>
+    <a class="item" data-tab="fourth">ムエタイ</a>
+</div>
+<div class="ui bottom attached tab segment active" data-tab="first">
+    <h1>ボクシング</h1>
+    <div class="row">
+        <div class="ui players segment">
+            <div class="ui grid">
+                <div class="row">
+                       <div class="one wide middle aligned column">
+                        <div class="ui statistic">
+                        <div class="label">Rank </div>
+                        <div class="value">1 </div>
+                        </div>
+                    </div>
+                    <div class="two wide column"><%= image_tag 'people.png', class: "ui float middle aligned circular image", size: '100x100' %> </div>
+                    <div class="eleven wide middle aligned column"><h1>伊藤拓夢</h1></div>
+                    <div class="right middle aligned column">
+                        <div class="ui statistic">
+                        <div class="value">4000</div>
+                        <div class="label">Rate </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui players segment">
+            <div class="ui grid">
+                <div class="row">
+                    <div class="one wide middle aligned column">
+                        <div class="ui statistic">
+                            <div class="label">Rank </div>
+                            <div class="value">2 </div>
+                        </div>
+                    </div>
+                    <div class="two wide column"><%= image_tag 'people.png', class: "ui float middle aligned circular image", size: '100x100' %> </div>
+                    <div class="eleven wide middle aligned column"><h1>よつやなぎうんたら</h1></div>
+                    <div class="right middle aligned column">
+                        <div class="ui statistic">
+                            <div class="value">900</div>
+                            <div class="label">Rate </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui players segment">
+            <div class="ui grid">
+                <div class="row">
+                    <div class="one wide middle aligned column">
+                        <div class="ui statistic">
+                            <div class="label">Rank </div>
+                            <div class="value">3 </div>
+                        </div>
+                    </div>
+                    <div class="two wide column"><%= image_tag 'people.png', class: "ui float middle aligned circular image", size: '100x100' %> </div>
+                    <div class="eleven wide middle aligned column"><h1>保登心愛</h1></div>
+                    <div class="right middle aligned column">
+                        <div class="ui statistic">
+                            <div class="value">500</div>
+                            <div class="label">Rate </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="ui bottom attached tab segment" data-tab="second">
+        <h1>キック</h1>
+        <div class="row">
+            <div class="ui players segment">
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="one wide middle aligned column">
+                            <div class="ui statistic">
+                                <div class="label">Rank </div>
+                                <div class="value">1 </div>
+                            </div>
+                        </div>
+                        <div class="two wide column"><%= image_tag 'people.png', class: "ui float middle aligned circular image", size: '100x100' %> </div>
+                        <div class="eleven wide middle aligned column"><h1>よっつん</h1></div>
+                        <div class="right middle aligned column">
+                            <div class="ui statistic">
+                                <div class="value">4000</div>
+                                <div class="label">Rate </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui players segment">
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="one wide middle aligned column">
+                            <div class="ui statistic">
+                                <div class="label">Rank </div>
+                                <div class="value">2 </div>
+                            </div>
+                        </div>
+                        <div class="two wide column"><%= image_tag 'people.png', class: "ui float middle aligned circular image", size: '100x100' %> </div>
+                        <div class="eleven wide middle aligned column"><h1>よつやなぎうんたら</h1></div>
+                        <div class="right middle aligned column">
+                            <div class="ui statistic">
+                                <div class="value">900</div>
+                                <div class="label">Rate </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui players segment">
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="one wide middle aligned column">
+                            <div class="ui statistic">
+                                <div class="label">Rank </div>
+                                <div class="value">3 </div>
+                            </div>
+                        </div>
+                        <div class="two wide column"><%= image_tag 'people.png', class: "ui float middle aligned circular image", size: '100x100' %> </div>
+                        <div class="eleven wide middle aligned column"><h1>よっつー</h1></div>
+                        <div class="right middle aligned column">
+                            <div class="ui statistic">
+                                <div class="value">500</div>
+                                <div class="label">Rate </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+</div>
+<div class="ui bottom attached tab segment" data-tab="third">
+    Third
+</div>
+<div class="ui bottom attached tab segment" data-tab="fourth">
+    <h1>ムエタイ</h1>
+</div>
