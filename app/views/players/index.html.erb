@@ -1,22 +1,137 @@
+
+
+<div class="ui top attached tabular menu">
+    <a class="red item active" data-tab="first">ボクシング</a>
+    <a class="red item" data-tab="second">キック</a>
+    <a class="item" data-tab="third">カポエラ</a>
+    <a class="item" data-tab="fourth">ムエタイ</a>
+</div>
+
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Players</h1>
-
-
 <%= form_tag('./players/hope') do%>
-    <%for f in @players %>
-        <%= check_box_tag 'id[id][]', f.id %>
-        <%= f.name %>
-        <%= f.prof_pic %>
-        <%= f.login_id %>
-        <%= f.login_pass %>
-        <%= f.description %>
-        <%= f.type_id %>
-        <br>
-    <% end %>
-    <%= submit_tag "ファイル送信" %>
-<%end%>
+<div class="ui bottom attached tab segment active" data-tab="first">
+    <h1>ボクシング</h1>
+    <div class="row">
+        <%for f  in @player_kick %>
+        <div class="ui players segment">
+            <div class="ui grid">
+                 <div class="row">
+                    <div class="one wide middle aligned column">
+                        <%= check_box_tag 'id[id][]', f.id %>
+                        <div class="ui statistic">
+                            <div class="label">Rank </div>
+                            <div class="value"><% @rate_num += 1 %></div>
+                        </div>
+                    </div>
+                    <div class="two wide column"><%= image_tag 'people.png', class: "ui float middle aligned circular image", size: '100x100' %> </div>
+                            <div class="eleven wide middle aligned column"><h1><%= f.name %></h1></div>
+                            <div class="right middle aligned column">
+                                <div class="ui statistic">
+                                    <div class="value"><%= f.rate %></div>
+                                    <div class="label">Rate </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui bottom attached tab segment active" data-tab="second">
+    <h1>キック</h1>
+        <div class="row">
+            <%for f  in @player_box %>
+            <div class="ui players segment">
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="one wide middle aligned column">
+                            <%= check_box_tag 'id[id][]', f.id %>
+                            <div class="ui statistic">
+                                <div class="label">Rank </div>
+                                <div class="value"><% @rate_num += 1 %></div>
+                            </div>
+                        </div>
+                        <div class="two wide column"><%= image_tag 'people.png', class: "ui float middle aligned circular image", size: '100x100' %> </div>
+                                <div class="eleven wide middle aligned column"><h1><%= f.name %></h1></div>
+                                <div class="right middle aligned column">
+                                    <div class="ui statistic">
+                                        <div class="value"><%= f.rate %></div>
+                                        <div class="label">Rate </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui bottom attached tab segment" data-tab="third">
+    <h1>カポエラ</h1>
+    <div class="row">
+        <%for f  in @player_cap %>
+            <div class="ui players segment">
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="one wide middle aligned column">
+                            <%= check_box_tag 'id[id][]', f.id %>
+                            <div class="ui statistic">
+                                <div class="label">Rank </div>
+                                <div class="value"><% @rate_num += 1 %></div>
+                            </div>
+                        </div>
+                        <div class="two wide column"><%= image_tag 'people.png', class: "ui float middle aligned circular image", size: '100x100' %> </div>
+                                <div class="eleven wide middle aligned column"><h1><%= f.name %></h1></div>
+                                <div class="right middle aligned column">
+                                    <div class="ui statistic">
+                                        <div class="value"><%= f.rate %></div>
+                                        <div class="label">Rate </div>
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                            <% end %>
+                            </div>
+                            </div>
+                            </div>
+
+</div>
+<div class="ui bottom attached tab segment" data-tab="fourth">
+    <h1>ムエタイ</h1>
+    <div class="row">
+        <%for f  in @player_mue %>
+            <div class="ui players segment">
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="one wide middle aligned column">
+                            <%= check_box_tag 'id[id][]', f.id %>
+                            <div class="ui statistic">
+                                <div class="label">Rank </div>
+                                <div class="value"><% @rate_num += 1 %></div>
+                            </div>
+                        </div>
+                        <div class="two wide column"><%= image_tag 'people.png', class: "ui float middle aligned circular image", size: '100x100' %> </div>
+                                <div class="eleven wide middle aligned column"><h1><%= f.name %></h1></div>
+                                <div class="right middle aligned column">
+                                    <div class="ui statistic">
+                                        <div class="value"><%= f.rate %></div>
+                                        <div class="label">Rate </div>
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                            <% end %>
+                            </div>
+                            </div>
+                            </div>
 
 
-
+                            </div>
+<%= submit_tag "ファイル送信" %>
+<% end %>
 <%= link_to 'New Player', new_player_path %>
