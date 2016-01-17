@@ -25,11 +25,11 @@ class PlayersController < ApplicationController
     p2_id = params[:id]["id"][1]
 
     p1_que = Player.find(p1_id)
-      @p1_name = p1_que.name
-      @p1_img = p1_que.prof_pic
+    @p1_name = p1_que.name
+    @p1_img = p1_que.prof_pic
     p2_que = Player.find( p2_id )
-      @p2_name = p2_que.name
-      @p2_img = p2_que.prof_pic
+    @p2_name = p2_que.name
+    @p2_img = p2_que.prof_pic
 
   end
 

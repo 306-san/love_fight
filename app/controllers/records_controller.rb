@@ -16,7 +16,7 @@ class RecordsController < ApplicationController
     Player.update(@record.loser_id, :rate => Player.find(@record.loser_id).rate.to_i - delta_r)
     Player.update(@record.winner_id, :rate => Player.find(@record.winner_id).rate.to_i + delta_r)
     @record.save
-    render :text => "hello world!"
+    render :action => "new"
   end
 
   def show
