@@ -7,14 +7,14 @@ class RecordsController < ApplicationController
   # POST /records
   def create
     @record = Record.new(record_params)
-    delta_r = 16 + ((Player.find(@record.loser_id).rate) - Player.find(@record.winner_id).rate) * 0.04
+    delta_r = 16 + ((Player.find(@record.loser_id).rate.to_i) - (Player.find(@record.winner_id).rate.to_i)) * 0.04
     if delta_r > 31 then
       delta_r = 31
     elsif delta_r < 1 then
       delta_r = 1 
     end
-    Player.update(@record.loser_id, :rate => Player.find(@record.loser_id).rate - delta_r)
-    Player.update(@record.winner_id, :rate => Player.find(@record.winner_id).rate + delta_r)
+    Player.update(@record.loser_id, :rate => Player.find(@record.loser_id).rate.to_i - delta_r)
+    Player.update(@record.winner_id, :rate => Player.find(@record.winner_id).rate.to_i + delta_r)
     @record.save
     render :text => "hello world!"
   end
