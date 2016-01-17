@@ -10,15 +10,17 @@
 <div class="ui bottom attached tab segment active" data-tab="first">
     <h1>ボクシング</h1>
     <div class="row">
+    <% @rate_num = 0 %>
         <%for f  in @player_box %>
             <div class="ui players segment">
+            <%= link_to f do%>
                 <div class="ui grid">
                     <div class="row">
                         <div class="one wide middle aligned column">
                             <%= check_box_tag 'id[id][]', f.id %>
                             <div class="ui statistic">
                                 <div class="label">Rank </div>
-                                <div class="value"><% @rate_num += 1 %></div>
+                                <div class="value"><%= @rate_num += 1 %></div>
                             </div>
                         </div>
                         <div class="two wide column"><%= image_tag f.prof_pic,class: "ui float middle aligned circular image",size:'100x100' %> </div>
@@ -32,6 +34,7 @@
                     </div>
                 </div>
             </div>
+          <% end %>
         <% end %>
     </div>
 </div>
@@ -39,15 +42,17 @@
 <div class="ui bottom attached tab segment" data-tab="second">
     <h1>キック</h1>
     <div class="row">
+    <% @rate_num = 0 %>
         <%for f  in @player_kick %>
             <div class="ui players segment">
+            <%= link_to f do%>
                 <div class="ui grid">
                     <div class="row">
                         <div class="one wide middle aligned column">
                             <%= check_box_tag 'id[id][]', f.id %>
                             <div class="ui statistic">
                                 <div class="label">Rank </div>
-                                <div class="value"><% @rate_num += 1 %></div>
+                                <div class="value"><%= @rate_num += 1 %></div>
                              </div>
                         </div>
                         <div class="two wide column"><%= image_tag f.prof_pic, class: "ui float middle aligned circular image",size:'100x100'%> </div>
@@ -61,6 +66,7 @@
                     </div>
                 </div>
             </div>
+            <% end %>
         <% end %>
     </div>
 </div>
@@ -68,15 +74,17 @@
 <div class="ui bottom attached tab segment" data-tab="third">
     <h1>カポエラ</h1>
     <div class="row">
+    <% @rate_num = 0 %>
         <%for f  in @player_cap %>
             <div class="ui players segment">
+            <%= link_to f do%>
                 <div class="ui grid">
                     <div class="row">
                         <div class="one wide middle aligned column">
                             <%= check_box_tag 'id[id][]', f.id %>
                             <div class="ui statistic">
                                 <div class="label">Rank </div>
-                                <div class="value"><% @rate_num += 1 %></div>
+                                <div class="value"><%= @rate_num += 1 %></div>
                             </div>
                         </div>
                         <div class="two wide column"><%= image_tag f.prof_pic, class: "ui float middle aligned circular image", size: '100x100' %> </div>
@@ -90,6 +98,7 @@
                     </div>
                 </div>
             </div>
+            <% end %>
         <% end %>
     </div>
 </div>
@@ -97,15 +106,17 @@
 <div class="ui bottom attached tab segment" data-tab="fourth">
     <h1>ムエタイ</h1>
     <div class="row">
+    <% @rate_num = 0 %>
         <%for f  in @player_mue %>
             <div class="ui players segment">
+            <%= link_to f do%>
                 <div class="ui grid">
                     <div class="row">
                         <div class="one wide middle aligned column">
                             <%= check_box_tag 'id[id][]', f.id %>
                             <div class="ui statistic">
                                 <div class="label">Rank </div>
-                                <div class="value"><% @rate_num += 1 %></div>
+                                <div class="value"><%= @rate_num += 1 %></div>
                             </div>
                         </div>
                         <div class="two wide column"><%= image_tag f.prof_pic,class: "ui float middle aligned circular image",size:'100x100' %> </div>
@@ -119,9 +130,9 @@
                     </div>
                 </div>
             </div>
+            <% end %>
         <% end %>
     </div>
 </div>
-<%= submit_tag "ファイル送信" %>
+<%= submit_tag "リクエスト", :class => "ui primary button" %>
 <% end %>
-<%= link_to 'New Player', new_player_path %>
