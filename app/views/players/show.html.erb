@@ -1,34 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @player.name %>
-</p>
-
-<p>
-  <strong>Prof pic:</strong>
-  <%= @player.prof_pic %>
-</p>
-
-<p>
-  <strong>Login:</strong>
-  <%= @player.login_id %>
-</p>
-
-<p>
-  <strong>Login pass:</strong>
-  <%= @player.login_pass %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @player.description %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @player.type_id %>
-</p>
-
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
+<div class="ui container">
+    <div class="profile-upper">
+        <%= image_tag @player.prof_pic, class: 'ui medium rounded floated left image' %>
+        <div><div class="big-size">名前</div></div>
+    <div class="true-name"><div class="name"><%= @player.name%></div></div>
+    <div class="point"><%= @player.rate%>pt</div>
+    </div>
+    <div class="profile-lower">
+        <h1>コメント</h1>
+        <div class="ui">
+        <%= @player.description%>
+        </div>
+    </div>
+    <%= link_to '←戻る', players_path %>
+</div>
