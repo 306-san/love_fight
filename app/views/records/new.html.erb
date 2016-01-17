@@ -1,35 +1,112 @@
-<%= form_for(@record) do |f| %>
-  <% if @record.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:</h2>
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2 class="ui teal image header">
+            <%= image_tag 'result.png', class: 'image' %>
+<!--            <img src="assets/images/logo.png" class="image">-->
+            <div class="content">
+                対戦結果
+            </div>
+        </h2>
+        <%= form_for(@record) do |f| %>
+          <% if @record.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@record.errors.count, "error") %> prohibited this record from being saved:</h2>
 
-      <ul>
-      <% @record.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+              <ul>
+              <% @record.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+        <form class="ui large form">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <!--                        <input type="text" name="email" placeholder="E-mail address">-->
+                        <%= f.text_field :name, placeholder: '管理者名' %>
+                    </div>
+                </div>
+                <div class="field">
+                  <div class="ui winner">
+                    <div class="ui fluid search selection dropdown">
+                      <input type="hidden" name="勝者" value="">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">勝利者</div>
+                        <div class="menu">
+                          <div class="item" data-value="jenny" data-text="Takumu">
+                            <%= image_tag 'people.png', class: 'ui mini avatar image'%>
+                            Takumu Ito
+                          </div>
+                          <div class="item" data-value="elliot" data-text="Kokoa">
+                            <%= image_tag 'people.png', class: 'ui mini avatar image'%>
+                            Kokoa Hoto
+                          </div>
+                          <div class="item" data-value="stevie" data-text="AAAA">
+                            <%= image_tag 'people.png', class: 'ui mini avatar image'%>
+                            AAA AAAA
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="field">
+                <div class="ui loser">
+                  <div class="ui loser fluid search selection dropdown">
+                    <input type="hidden" name="敗者" value="">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">敗者</div>
+                    <div class="menu">
+                      <div class="item" data-value="jenny" data-text="Takumu">
+                        <%= image_tag 'people.png', class: 'ui mini avatar image'%>
+                        Takumu Ito
+                      </div>
+                      <div class="item" data-value="elliot" data-text="Kokoa">
+                        <%= image_tag 'people.png', class: 'ui mini avatar image'%>
+                        Kokoa Hoto
+                      </div>
+                      <div class="item" data-value="stevie" data-text="AAAA">
+                        <%= image_tag 'people.png', class: 'ui mini avatar image'%>
+                        AAA AAAA
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui input fight-date">
+                  <%= f.text_field :fight_date, class: 'form-control date-picker' %>
+                </div>
+              </div>
+              <div class="button">
+                <%= f.submit '試合結果を登録', class: 'ui fluid large teal submit button' %>
+              </div>
+          </div>
+              
+                 <% end %>
+           
+      </form>
+
+<!--
+          <div class="ipunt">
+            <%# f.label :name %><br>
+            <%# f.text_field :name %>
+          </div>
+          <div class="field">
+            <%# f.label "勝者" %><br>
+            <%# f.collection_select :winner_id, Player.all, :id, :name %>
+          </div>
+          <div class="field">
+            <%# f.label "敗者" %><br>
+            <%# f.collection_select :loser_id, Player.all, :id, :name %>
+          </div>
+          <div class="field">
+            <%# f.label :fight_date %><br>
+            <%# f.datetime_select :fight_date %>
+          </div>
+-->
+
+
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label "勝者" %><br>
-    <%= f.collection_select :winner_id, Player.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label "敗者" %><br>
-    <%= f.collection_select :loser_id, Player.all, :id, :name %>
-  </div>
-  <div class="field">
-    <%= f.label :fight_date %><br>
-    <%= f.text_field :fight_date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-rails generate migration AddRatesToPlayers rate:integer
+</div>
